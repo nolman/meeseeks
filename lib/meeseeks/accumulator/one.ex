@@ -11,6 +11,9 @@ defmodule Meeseeks.Accumulator.One do
     result = %Result{document: document, id: id}
     %{acc | value: result}
   end
+  def add(%Accumulator.One{value: value} = acc, document, id) do
+    %{acc | value: value}
+  end
 
   @impl true
   def complete?(%Accumulator.One{value: nil}), do: false
